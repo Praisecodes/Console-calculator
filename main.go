@@ -4,10 +4,43 @@ import (
 	"fmt"
 )
 
+func Add(first int64, second int64) (result int64) {
+	result = first + second
+	return
+}
+
+func substract(first int64, second int64) (result int64) {
+	result = first - second
+	return
+}
+
+func divide(first int64, second int64) (result int64) {
+	if second == 0 {
+		fmt.Println("Division by zero not allowed")
+	} else {
+		result = first / second
+	}
+	return
+}
+
+func multiply(first int64, second int64) (result int64) {
+	result = first * second
+	return
+}
+
 func performAction(switchCase string, first int64, second int64) {
 	switch switchCase {
 	case "1":
-		fmt.Print(first + second)
+		fmt.Println(Add(first, second))
+
+	case "2":
+		fmt.Println(substract(first, second))
+
+	case "3":
+		fmt.Println(divide(first, second))
+
+	case "4":
+		fmt.Println(multiply(first, second))
 
 	default:
 		fmt.Println("Invalid choice")
